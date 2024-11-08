@@ -12,7 +12,7 @@ function App() {
     content: '',
     stock: '',
     online: false,
-    picture: { img: '' }
+    picture: [{ img: {} }]
   });
 
   const [editMode, setEditMode] = useState(false);
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div>
-      <h1>Mini E-Commerce</h1>
+      <h1>CRUD</h1>
       <h2>Articles</h2>
 
       <form onSubmit={add}>
@@ -112,7 +112,7 @@ function App() {
           <p><strong>Stock:</strong> {currentArticle.stock}</p>
           <p><strong>En ligne:</strong> {currentArticle.online ? "Oui" : "Non"}</p>
           <img 
-              src={currentArticle.picture.img} 
+              src={currentArticle.picture[0].img} 
               alt={currentArticle.name} 
               style={{ width: '200px', height: 'auto', marginTop: '10px' }} 
             />
